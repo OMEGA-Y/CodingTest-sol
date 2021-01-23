@@ -1,0 +1,23 @@
+version: '3.8'
+networks:
+  app-tier:
+    driver: bridge
+services:
+  server:
+    image: anwlro7958/fuding:server
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./server:/app
+    networks:
+      - app-tier
+    restart: always
+  client:
+    image: anwlro7958/fuding:client
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client:/app
+    networks:
+      - app-tier
+    restart: always
