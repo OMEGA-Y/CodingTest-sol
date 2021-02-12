@@ -1,3 +1,4 @@
+''' 시간 더 오래 걸리는 이전 풀이(약 3배 느림)
 M, N = map(int,input().split())
 
 prime = set([i for i in range(3,N+1,2)])
@@ -13,3 +14,18 @@ for i in prime:
         pass
     else:
         print(i)
+'''
+
+M, N = map(int,input().split())
+
+if N < 2:
+    prime = []
+else:
+    nums = [False,False] + [True] * (N-1)
+    for i in range(2, int(N**0.5)+1):
+        if nums[i]: #True
+            nums[i*2::i] = [False] * ((N-i)//i)
+    prime = [idx for idx,val in enumerate(nums) if val and idx >= M]
+
+for i in prime:
+    print(i)
