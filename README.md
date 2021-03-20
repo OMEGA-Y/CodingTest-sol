@@ -1,2 +1,4 @@
-# Baekjoon online judge site solution
-my solution of Baekjoon online judge site
+# About Algorithm and Data Structure
+- Baekjoon online judge site solution
+- Algorithm study
+- Coding test 
